@@ -1,0 +1,356 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* 
+ Color pellet for dlh projects 
+ */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+$secondary: #d4b421;
+$secondary2: #fff291;
+$coklat: #f4eebd;
+$primary: #189637;
+$primary2: #92a15e;
+
+@font-face {
+    font-family: BebasNue;
+    src: url("/public/vendor/FONT/bebas_neue/BebasNeue-Regular.ttf");
+}
+
+.font-primary {
+    font-family: BebasNue;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(10, 214, 54, 0.301); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $primary; 
+}
+body {
+    font-family: "Open Sans";
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-secondary2 {
+    background-color: $secondary2;
+}
+
+.bg-primary2 {
+    background-color: $primary2;
+}
+
+
+
+nav {
+    letter-spacing: 2px;
+    font-family: BebasNue;
+}
+.navbar{
+    z-index: 3;
+}
+.items-nav {
+    z-index: 3;
+    &.selected {
+        background-color: $secondary;
+        color: white;
+        box-shadow: 4px 3px rgba(128, 128, 128, 0.5);
+    }
+
+    &:hover {
+        background-color: $secondary;
+        color: white;
+        box-shadow: 4px 3px rgba(128, 128, 128, 0.5);
+    }
+  
+    @apply pl-6 pr-6 mb-3 rounded-none lg:mb-0 py-2 transform delay-75 duration-100;
+    &:has(.fill-current){
+        @apply pr-3;
+    }
+}
+
+
+h1 {
+    @apply text-primary text-3xl font-bold;
+}
+
+h2 {
+    @apply text-primary text-2xl font-bold;
+}
+
+h3 {
+    @apply text-primary text-xl font-bold;
+}
+
+button {
+    letter-spacing: 2px !important;
+}
+
+.article {
+
+    @apply break-words rounded-md bg-primary overflow-hidden hover:scale-105 h-60 mb-5;
+
+    .article-thumbnail {
+        @apply overflow-hidden;
+
+        img {
+            @apply hover:scale-105 md:block transform duration-300 h-36 w-full;
+        }
+    }
+    .content{
+        @apply  p-2 pb-10 h-32 flex justify-between flex-col;
+        .article-title {
+            font-weight: bold;
+            @apply text-white line-clamp-2 text-ellipsis capitalize font-bold;
+        }
+        
+        .article-published {
+            @apply text-sm text-white;
+        }
+    }
+}
+
+
+
+.article-other {
+    @apply bg-neutral mt-4 rounded p-2 shadow;
+
+    img {
+        height: 100px;
+    }
+
+    .article-other-content {
+        @apply w-72 flex flex-col justify-items-center;
+    }
+}
+
+.base-content {
+    @apply px-5 lg:px-24 py-8;
+    .base-title {
+        font-family: BebasNue;
+        letter-spacing: 2px !important;
+        @apply my-4;
+    }
+}
+
+.header-section {
+    @apply bg-gray-50 px-5 lg:px-24 py-4 ;
+    .header-title{
+      @apply font-primary;
+    }
+    ul {
+        @apply flex font-primary;
+
+        li {
+            @apply after:content-['_/_'] last:after:content-[''] after:text-primary last:text-primary;
+        }
+
+        a {
+            @apply text-secondary;
+        }
+    }
+}
+
+    .owl-carousel{
+
+                .active{
+                    span{
+                        background-color: $primary !important;
+                    
+                }
+            }
+    }
+.owl-item {height: 0;}    
+.owl-item.active {height: auto;}
+/* 
+ Ini adalah css untuk footer 
+ */
+footer {
+
+    sub {
+        font-family: BebasNue;
+        color: white !important;
+        letter-spacing: 1px !important;
+    }
+
+    .footer-logo-head {
+        font-family: BebasNue;
+        letter-spacing: 3px !important;
+        color: white !important;
+    }
+}
+.galery-carousel{
+    .owl-item{
+        &.active{
+            transform: scale(0.855);
+            &.center{
+                transform: scale(1.1);
+    }}}
+    
+}
+
+// RESET
+
+.unreset {
+  // @apply font-primary;
+    a {
+      @apply text-blue-700 underline;
+    }
+    p {
+      @apply my-4 text-sm lg:text-base;
+    }
+  
+    blockquote,
+    figure {
+      @apply my-4 mx-10;
+    }
+  
+    hr {
+      @apply border;
+    }
+  
+    h1 {
+      @apply text-4xl font-bold my-2;
+    }
+  
+    h2 {
+      @apply text-2xl font-bold my-3;
+    }
+  
+    h3 {
+      @apply text-lg font-bold my-4;
+    }
+  
+    h4 {
+      @apply text-base font-bold my-5;
+    }
+  
+    h5 {
+      @apply text-sm font-bold my-6;
+    }
+  
+    h6 {
+      @apply text-xs font-bold my-10;
+    }
+  
+    article,
+    aside,
+    nav,
+    section {
+      h1 {
+        @apply text-2xl font-bold my-3;
+      }
+  
+      article,
+      aside,
+      nav,
+      section {
+        h1 {
+          @apply text-lg font-bold my-4;
+        }
+  
+        article,
+        aside,
+        nav,
+        section {
+          h1 {
+            @apply text-base font-bold my-5;
+          }
+  
+          article,
+          aside,
+          nav,
+          section {
+            h1 {
+              @apply text-sm font-bold my-6;
+            }
+  
+            article,
+            aside,
+            nav,
+            section {
+              h1 {
+                @apply text-xs font-bold my-10;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    ul,
+    menu {
+      // should be my-4 for proper reset, but thats ugly af
+      @apply list-disc my-1 pl-10;
+    }
+  
+    ol {
+      @apply list-decimal my-4 pl-10;
+    }
+  
+    ul,
+    ol {
+      ul {
+        list-style-type: circle;
+      }
+  
+      ul,
+      ol {
+        ul {
+          list-style-type: square;
+        }
+      }
+    }
+  
+    dd {
+      @apply pl-10;
+    }
+  
+    dl {
+      @apply my-4;
+    }
+  
+    ul,
+    ol,
+    menu,
+    dl {
+      ul,
+      ol,
+      menu,
+      dl {
+        margin: 0;
+      }
+    }
+  
+    legend {
+      @apply py-0 px-1;
+    }
+  
+    fieldset {
+      @apply my-0 mx-1 pt-0 px-1 pb-2;
+    }
+  
+    b,
+    strong {
+      font-weight: bold;
+    }
+  
+    pre {
+      @apply my-4;
+    }
+  }
