@@ -12,4 +12,4 @@ STEP 5: ./vendor/bin/sail php artisan key:generate
 STEP 6: ./vendor/bin/sail php artisan migrate:fresh
 STEP 7: ./vendor/bin/sail npm install
 STEP 8: ./vendor/bin/sail npm run build
-<!-- STEP 9: ./vendor/bin/sail php artisan key:generate -->
+STEP 9: ./vendor/bin/sail php artisan storage:link
