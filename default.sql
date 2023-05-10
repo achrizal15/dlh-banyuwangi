@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: mysql
--- Waktu pembuatan: 20 Apr 2023 pada 00.52
--- Versi server: 8.0.32
--- Versi PHP: 8.1.18
+-- Host: localhost:3306
+-- Waktu pembuatan: 10 Bulan Mei 2023 pada 18.05
+-- Versi server: 5.6.34-log
+-- Versi PHP: 8.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel`
+-- Database: `dlhdevbw_bwh`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `agendas` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal_mulai` date NOT NULL,
   `tanggal_selesai` date NOT NULL,
@@ -62,7 +62,7 @@ INSERT INTO `agendas` (`id`, `judul`, `tanggal_mulai`, `tanggal_selesai`, `deskr
 --
 
 CREATE TABLE `artikels` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deskripsi` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -88,7 +88,7 @@ INSERT INTO `artikels` (`id`, `judul`, `deskripsi`, `link`, `gambar`, `created_b
 --
 
 CREATE TABLE `banners` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gambar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -110,7 +110,7 @@ INSERT INTO `banners` (`id`, `nama`, `gambar`, `link`, `created_at`, `updated_at
 --
 
 CREATE TABLE `cerita_sukses` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deskripsi` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -136,9 +136,9 @@ INSERT INTO `cerita_sukses` (`id`, `judul`, `deskripsi`, `link`, `gambar`, `crea
 --
 
 CREATE TABLE `dokumens` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kategori_id` bigint UNSIGNED NOT NULL,
+  `kategori_id` bigint(20) UNSIGNED NOT NULL,
   `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `keterangan` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -163,7 +163,7 @@ INSERT INTO `dokumens` (`id`, `nama`, `kategori_id`, `file`, `keterangan`, `crea
 --
 
 CREATE TABLE `failed_jobs` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -179,7 +179,7 @@ CREATE TABLE `failed_jobs` (
 --
 
 CREATE TABLE `galeries` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `judul` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `deskripsi` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -194,7 +194,7 @@ CREATE TABLE `galeries` (
 --
 
 INSERT INTO `galeries` (`id`, `judul`, `deskripsi`, `link`, `gambar`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'GERAKAN PENANAMAN 4.309 POHON PADA LAHAN KRITIS', '<p>Banyuwangi, 25 Oktober 2022. DLH Kab. Banyuwangi, Dinas Pertanian dan Pangan Kab. Banyuwangi, BPBD Kab. Banyuwangi, Cabang Dinas Kehutanan Prov Jatim Wil. Banyuwangi, KPH Perhutani Banyuwangi Barat, PT. Perkebunan Lidjen Banyuwangi, Kec. Licin, Kec. Glagah, Desa-Desa di Kec. Licin dan Kec. Glagah, LMDH KPH Perhutani Banyuwangi Barat, Forpimka Licin dan masyarakat sekitar berkolaborasi dan bersinergi bersama melaksanakan gerakan penanaman pohon di lahan kritis di Gantasan, Desa Tamansari, Kecamatan Licin sebagai salah satu upaya rehabilitasi lahan guna mencegah potensi bencana banjir dan tanah longsor. Kegiatan tersebut dihadiri dan dibuka oleh Bapak Asisten Perekonomian dan Pembangunan Setda Kab. Banyuwangi. Sebanyak 4.309 bibit pohon, lebih banyak dari rencana awal yaitu 2.784 bibit pohon yang terdiri dari Mahoni, Gmelina, Manting, Wuni, Durian, Jambu, Matoa, Nangka, Alpukat, Asem, Kopi, Kelengkeng, Mangga, Jati, dan Sukun telah selesai ditanam di kanan kiri jalan Gantasan, Desa Tamansari, Kec. Licin, Kawasan Lahan HGU PT. Lidjen Banyuwangi di Gantasan, Kawasan Gunung Ranti Kec. Licin dan Gantasan di bawah kewenangan KPH Perhutani Banyuwangi Barat.</p>\r\n\r\n<hr />\r\n<p><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/Cara_Membuat_Penawaran_untuk_Rumah_Impian_Anda.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/Cara_Membuat_Penawaran_untuk_Rumah_Impian_Anda.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/2.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/2.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/3.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/3.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/4.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/4.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/5.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/5.jpg\" /></a></p>', 'GERAKAN-PENANAMAN-4.309-POHON-PADA-LAHAN-KRITIS', 'galeries/1hOIVcI1T7Vkxlj5NYBA7f0PzDwN0tw3ml2kcdtc.png', 'husnul', '2023-01-28 23:02:05', '2023-04-20 00:50:48'),
+(1, 'GERAKAN PENANAMAN 4.309 POHON PADA LAHAN KRITIS', '<p>Banyuwangi, 25 Oktober 2022. DLH Kab. Banyuwangi, Dinas Pertanian dan Pangan Kab. Banyuwangi, BPBD Kab. Banyuwangi, Cabang Dinas Kehutanan Prov Jatim Wil. Banyuwangi, KPH Perhutani Banyuwangi Barat, PT. Perkebunan Lidjen Banyuwangi, Kec. Licin, Kec. Glagah, Desa-Desa di Kec. Licin dan Kec. Glagah, LMDH KPH Perhutani Banyuwangi Barat, Forpimka Licin dan masyarakat sekitar berkolaborasi dan bersinergi bersama melaksanakan gerakan penanaman pohon di lahan kritis di Gantasan, Desa Tamansari, Kecamatan Licin sebagai salah satu upaya rehabilitasi lahan guna mencegah potensi bencana banjir dan tanah longsor. Kegiatan tersebut dihadiri dan dibuka oleh Bapak Asisten Perekonomian dan Pembangunan Setda Kab. Banyuwangi. Sebanyak 4.309 bibit pohon, lebih banyak dari rencana awal yaitu 2.784 bibit pohon yang terdiri dari Mahoni, Gmelina, Manting, Wuni, Durian, Jambu, Matoa, Nangka, Alpukat, Asem, Kopi, Kelengkeng, Mangga, Jati, dan Sukun telah selesai ditanam di kanan kiri jalan Gantasan, Desa Tamansari, Kec. Licin, Kawasan Lahan HGU PT. Lidjen Banyuwangi di Gantasan, Kawasan Gunung Ranti Kec. Licin dan Gantasan di bawah kewenangan KPH Perhutani Banyuwangi Barat.</p>\r\n\r\n<hr />\r\n<p><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/Cara_Membuat_Penawaran_untuk_Rumah_Impian_Anda.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/Cara_Membuat_Penawaran_untuk_Rumah_Impian_Anda.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/2.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/2.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/3.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/3.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/4.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/4.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/5.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/5.jpg\" /></a></p>', 'GERAKAN-PENANAMAN-4.309-POHON-PADA-LAHAN-KRITIS', 'galeries/G5wvdtH6BPpjTtcnZDbYmMWTcdZ5gZI1pNKgTHCK.jpg', 'husnul', '2023-01-28 23:02:05', '2023-01-29 06:18:04'),
 (2, 'KA. DLH membuka Bintek calon sekolah Adiwiyata d Aula SD Penganjuran IV', '<p>KA. DLH membuka Bintek calon sekolah Adiwiyata d Aula SD Penganjuran IV</p>\r\n\r\n<hr />\r\n<p><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/IMG-20170123-WA0004.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/IMG-20170123-WA0004.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/IMG-20170123-WA0005.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/IMG-20170123-WA0005.jpg\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/kepala_dinas.jpg\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/kepala_dinas.jpg\" /></a></p>', 'KA.-DLH-membuka-Bintek-calon-sekolah-Adiwiyata-d-Aula-SD-Penganjuran-IV', 'galeries/QxkjURP3ApdjJXZveeAZjfon2dwNI5WaTPp4K691.jpg', 'husnul', '2023-01-28 23:02:05', '2023-01-29 06:28:07'),
 (6, 'FESTIFAL JEDING RIJIG DAN SEDEKAH OKSIGEN', '<p>Banyuwangi Festival juga kami manfaatkan untuk meningkatkan derajat kesehatan masyarakat baik melalui Sedekah Oksigen dan Festival Jeding Rijig. Kami bersyukur warga Banyuwangi mulai sadar untuk menjaga kebersihan. Kami tidak akan pernah bosan untuk selalu mengingatkan masyarakat untuk senantiasa memiliki kehidupan yang sehat lewat Festival yang kami gelar</p>\r\n\r\n<hr />\r\n<p><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/DSCN8772.JPG\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/DSCN8772.JPG\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/DSCN8775.JPG\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/DSCN8775.JPG\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/DSCN8779.JPG\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/DSCN8779.JPG\" />&nbsp;</a><a href=\"https://dlh.banyuwangikab.go.id/images/gallery/resize/DSCN8783.JPG\"><img src=\"https://dlh.banyuwangikab.go.id/images/gallery/thumb_gallery/DSCN8783.JPG\" /></a></p>\r\n\r\n<ul>\r\n</ul>', 'FESTIFAL-JEDING-RIJIG-DAN-SEDEKAH-OKSIGEN', 'galeries/j8S6TQ131SP4jAgYwsqietkhr9rxg5N6qO7wRw1b.jpg', 'admin', '2023-01-29 06:23:47', '2023-01-29 06:23:47');
 
@@ -205,7 +205,7 @@ INSERT INTO `galeries` (`id`, `judul`, `deskripsi`, `link`, `gambar`, `created_b
 --
 
 CREATE TABLE `kategoris` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `keterangan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -231,9 +231,9 @@ INSERT INTO `kategoris` (`id`, `nama`, `keterangan`, `created_at`, `updated_at`)
 --
 
 CREATE TABLE `migrations` (
-  `id` int UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL
+  `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -264,7 +264,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `mitra_d_l_h_s` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `gambar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -303,9 +303,9 @@ CREATE TABLE `password_resets` (
 --
 
 CREATE TABLE `personal_access_tokens` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tokenable_id` bigint UNSIGNED NOT NULL,
+  `tokenable_id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `abilities` text COLLATE utf8mb4_unicode_ci,
@@ -322,7 +322,7 @@ CREATE TABLE `personal_access_tokens` (
 --
 
 CREATE TABLE `static_pages` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `variabel` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -414,7 +414,7 @@ INSERT INTO `static_pages` (`id`, `variabel`, `type`, `created_at`, `updated_at`
 --
 
 CREATE TABLE `users` (
-  `id` bigint UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -464,15 +464,7 @@ ALTER TABLE `cerita_sukses`
 -- Indeks untuk tabel `dokumens`
 --
 ALTER TABLE `dokumens`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `dokumens_link_unique` (`link`);
-
---
--- Indeks untuk tabel `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `galeries`
@@ -499,31 +491,18 @@ ALTER TABLE `mitra_d_l_h_s`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `password_resets`
---
-ALTER TABLE `password_resets`
-  ADD PRIMARY KEY (`email`);
-
---
 -- Indeks untuk tabel `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
-  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
+  ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`(191),`tokenable_id`);
 
 --
 -- Indeks untuk tabel `static_pages`
 --
 ALTER TABLE `static_pages`
   ADD PRIMARY KEY (`id`);
-
---
--- Indeks untuk tabel `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -533,79 +512,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `agendas`
 --
 ALTER TABLE `agendas`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `artikels`
 --
 ALTER TABLE `artikels`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `cerita_sukses`
 --
 ALTER TABLE `cerita_sukses`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT untuk tabel `dokumens`
---
-ALTER TABLE `dokumens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT untuk tabel `failed_jobs`
---
-ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `galeries`
---
-ALTER TABLE `galeries`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT untuk tabel `kategoris`
---
-ALTER TABLE `kategoris`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT untuk tabel `migrations`
---
-ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT untuk tabel `mitra_d_l_h_s`
---
-ALTER TABLE `mitra_d_l_h_s`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT untuk tabel `personal_access_tokens`
---
-ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT untuk tabel `static_pages`
---
-ALTER TABLE `static_pages`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=202;
-
---
--- AUTO_INCREMENT untuk tabel `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
