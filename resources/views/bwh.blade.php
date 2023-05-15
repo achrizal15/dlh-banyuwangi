@@ -30,10 +30,10 @@ Kelola dan Kelembagaan");
 @extends('layout.index')
 @section("content")
 <section class="header-section">
-    <h1 class="header-title">BANYIWANGI HIJAU</h1>
+    <h1 class="header-title">BANYUWANGI HIJAU</h1>
     <ul class="header-breadcrumb">
         <li><a href="">HOME</a></li>
-        <li>BANYIWANGI HIJAU</li>
+        <li>BANYUWANGI HIJAU</li>
     </ul>
 </section>
 <section class="base-content h-screen">

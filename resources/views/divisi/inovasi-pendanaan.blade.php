@@ -10,7 +10,7 @@ $point2=StaticContent::getContent('inovasi-pendanaan','point2',"Sumber Pendanaan
     <h1 class="header-title">INOVASI PENDANAAN</h1>
     <ul class="header-breadcrumb">
         <li><a href="">HOME</a></li>
-        <li><a href="{{route('bwh.index')}}">BANYIWANGI HIJAU</a></li>
+        <li><a href="{{route('bwh.index')}}">BANYUWANGI HIJAU</a></li>
         <li class="text-primary">INOVASI PENDANAAN</li>
     </ul>
 </section>

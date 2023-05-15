@@ -12,7 +12,7 @@ $point4=StaticContent::getContent('tata-kelola-dan-kelembagaan','point4',"Dukung
     <h1 class="header-title uppercase">Tata Kelola dan Kelembagaan</h1>
     <ul class="header-breadcrumb">
         <li><a href="">HOME</a></li>
-        <li><a href="{{route('bwh.index')}}">BANYIWANGI HIJAU</a></li>
+        <li><a href="{{route('bwh.index')}}">BANYUWANGI HIJAU</a></li>
         <li class="text-primary uppercase">Tata Kelola dan Kelembagaan</li>
     </ul>
 </section>

@@ -11,7 +11,7 @@ $point3=StaticContent::getContent('operasional-persampahan','point3',"Desain dan
     <h1 class="header-title">OPERASIONAL PERSAMPAHAN</h1>
     <ul class="header-breadcrumb">
         <li><a href="">HOME</a></li>
-        <li><a href="{{route('bwh.index')}}">BANYIWANGI HIJAU</a></li>
+        <li><a href="{{route('bwh.index')}}">BANYUWANGI HIJAU</a></li>
         <li class="text-primary">OPERASIONAL PERSAMPAHAN</li>
     </ul>
 </section>

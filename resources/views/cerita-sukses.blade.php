@@ -4,7 +4,7 @@
     <h1 class="header-title">CERITA SUKSES</h1>
     <ul class="header-breadcrumb">
         <li><a href="">HOME</a></li>
-        <li><a href="{{route('bwh.index')}}">BANYIWANGI HIJAU</a></li>
+        <li><a href="{{route('bwh.index')}}">BANYUWANGI HIJAU</a></li>
         <li class="text-primary">CERITA SUKSES</li>
     </ul>
 </section>

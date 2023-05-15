@@ -10,7 +10,7 @@ $point3=StaticContent::getContent('komunikasi-perubahan-perilaku','point3',"Impl
     <h1 class="header-title uppercase">Komunikasi Perubahan Perilaku</h1>
     <ul class="header-breadcrumb">
         <li><a href="">HOME</a></li>
-        <li><a href="{{route('bwh.index')}}">BANYIWANGI HIJAU</a></li>
+        <li><a href="{{route('bwh.index')}}">BANYUWANGI HIJAU</a></li>
         <li class="text-primary uppercase">Komunikasi Perubahan Perilaku</li>
     </ul>
 </section>
