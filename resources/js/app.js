@@ -1,2 +1,1 @@
-import './bootstrap';
-// TEST2
+import '../css/bwh.scss'

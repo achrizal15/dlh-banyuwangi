@@ -8,6 +8,7 @@ class BanyuwangiHijauController extends Controller
 {
     public function index()
     {
-        return view("bwh.index");
+        $categories = \App\Models\Kategori::select(['nama', 'id'])->get();
+        return view("bwh.index", compact('categories'));
     }
 }

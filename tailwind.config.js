@@ -8,8 +8,12 @@ module.exports = {
      theme: {
           extend: {
                colors: {
+                    hitam: '#292828',
                     utama: {
                          100: '#EAF0EC',
+                         200: '#3E8156',
+                         300: '#25723E',
+                         400: '#091B0F',
                     },
                },
           },
