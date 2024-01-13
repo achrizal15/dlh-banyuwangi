@@ -41,7 +41,7 @@ Route::get('/clear', function () {
     Artisan::call("cache:clear");
 });
 
-Route::get("/", [HomeController::class, "index"])->name('home');    
+Route::get("/", [HomeController::class, "index"])->name('home');
 Route::get("/tentang-kami", [TentangKamiController::class, "index"])->name('tentang.kami');
 
 Route::group(["middleware" => "guest"], function () {
@@ -65,16 +65,17 @@ Route::prefix("/informasi-dan-regulasi")
         Route::get("/{dokumen:link}", "show")->name('show');
     });
 
+
 Route::prefix("/banyuwangi-hijau")
     ->as("bwh.")
-    ->controller(BwhController::class)
+    ->controller(\App\Http\Controllers\BanyuwangiHijauController::class)
     ->group(function () {
         Route::get("/", 'index')->name("index");
-        Route::get("/operational-persampahan",  "operationalPersampahan")->name("operational-persampahan");
-        Route::get("/komunikasi-perubahan-perilaku",  "komunikasiPerubahanPerilaku")->name("komunikasi-perubahan-perilaku");
-        Route::get("/tata-kelola-dan-kelembagaan",  "tataKelola")->name("tata-kelola-dan-kelembagaan");
-        Route::get("/inovasi-pendanaan",  "inovasiPendanaan")->name("inovasi-pendanaan");
-        Route::get("/cerita-sukses/{ceritaSukses:link}", "ceritaSukses")->name("cerita-sukses");
+        // Route::get("/operational-persampahan",  "operationalPersampahan")->name("operational-persampahan");
+        // Route::get("/komunikasi-perubahan-perilaku",  "komunikasiPerubahanPerilaku")->name("komunikasi-perubahan-perilaku");
+        // Route::get("/tata-kelola-dan-kelembagaan",  "tataKelola")->name("tata-kelola-dan-kelembagaan");
+        // Route::get("/inovasi-pendanaan",  "inovasiPendanaan")->name("inovasi-pendanaan");
+        // Route::get("/cerita-sukses/{ceritaSukses:link}", "ceritaSukses")->name("cerita-sukses");
     });
 
 
