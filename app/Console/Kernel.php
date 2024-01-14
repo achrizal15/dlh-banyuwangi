@@ -15,8 +15,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('instagram:refresh-feeds')->everyMinute();
-        $schedule->command('instagram:refresh-token')->weekdays();
+        $schedule->command('instagram:refresh-feeds')->weekly()->fridays()->at('01:00');
+        $schedule->command('instagram:refresh-token')->weekly()->fridays()->at('01:00');
     }
 
     /**

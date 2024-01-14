@@ -15,9 +15,12 @@ return new class extends Migration {
         Schema::create('instagrams', function (Blueprint $table) {
             $table->id();
             $table->longText('media_id');
+            $table->longText('permalink');
+            $table->longText('username');
             $table->longText('caption')->nullable();
             $table->longText('media_url');
             $table->string('media_type');
+            $table->timestamp('post_at');
             $table->timestamps();
         });
     }

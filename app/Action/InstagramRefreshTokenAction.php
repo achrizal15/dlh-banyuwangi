@@ -14,7 +14,7 @@ class InstagramRefreshTokenAction
                   $instragramApi = InstagramApi::latest()->firstOrFail();
                   return $instragramApi->access_token;
          }
-         public function fetchData()
+         private function fetchData()
          {
                   $response = Http::get($this->url, [
                            'grant_type' => 'ig_refresh_token',

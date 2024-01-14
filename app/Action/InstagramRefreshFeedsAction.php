@@ -16,19 +16,23 @@ class InstagramRefreshFeedsAction
                   $instragramApi = InstagramApi::latest()->firstOrFail();
                   return $instragramApi->access_token;
          }
-         public function fetchData()
+         private function fetchData()
          {
                   $response = Http::get($this->url, [
-                           'fields' => 'caption,media_url,id,media_type',
+                           'limit' => '55',
+                           'fields' => 'caption,media_url,id,media_type,permalink,username,timestamp',
                            'access_token' => $this->latestToken()
                   ]);
                   $body = collect(json_decode($response->body())->data);
                   return $body->map(function ($data) {
                            return [
                                     'caption' => isset($data->caption) ? $data->caption : '',
+                                    'username' => isset($data->username) ? $data->username : '',
+                                    'permalink' => isset($data->permalink) ? $data->permalink : 'notfound',
                                     'media_id' => isset($data->id) ? $data->id : 'id',
                                     'media_url' => isset($data->media_url) ? $data->media_url : 'null',
                                     'media_type' => isset($data->media_type) ? $data->media_type : 'IMAGE',
+                                    'post_at' => Carbon::parse($data->timestamp)
                            ];
                   })->toArray();
          }
@@ -36,12 +40,16 @@ class InstagramRefreshFeedsAction
          {
                   try {
                            DB::beginTransaction();
-                           Instagram::where('media_id', '!=', 'refresh')->delete();
-                           $instagram = Instagram::insert($this->fetchData());
+                           $data = $this->fetchData();
+                           if (count($data) > 0) {
+                                    Instagram::where('media_id', '!=', 'refresh')->delete();
+                           }
+                           $instagram = Instagram::insert($data);
                            DB::commit();
                            return $instagram;
                   } catch (\Throwable $th) {
-                           return false;
+                           return throw new \Exception($th->getMessage(), 1);
+
                   }
 
          }

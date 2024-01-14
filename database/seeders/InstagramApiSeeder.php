@@ -16,7 +16,7 @@ class InstagramApiSeeder extends Seeder
     public function run()
     {
         InstagramApi::create([
-            'access_token' => 'IGQWRQYXp3TVZA5WXU4eXBwRXZAXWkhIcEp4NXVlTnhHXzhucm01clJZAMFpwSUVNSkR3ZAEF2UURBeVhHeUJleE9ZAWndHRno4N3ZAPVHljekEyU1pCQ0JISGVRdGtUek9MN2p1MUlDQWFqMlFNQQZDZD',
+            'access_token' => env('INSTAGRAM_TOKEN'),
             'expired_at' => \Carbon\Carbon::now()->addSeconds(5183902),
             'token_type' => 'bearer'
         ]);

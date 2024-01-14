@@ -26,7 +26,7 @@ class RefreshInstagramToken extends Command
         $instagramRefreshTokenAction = new \App\Action\InstagramRefreshTokenAction;
         $result = $instagramRefreshTokenAction->generate();
         if ($result == false) {
-            $this->info('Instagram API tokens refreshed failure.');
+            $this->info('Instagram API tokens refreshed failure.' . Carbon::now()->toDateString());
             return Command::FAILURE;
         }
         $this->info('Instagram API tokens refreshed successfully:' . $result->access_token);

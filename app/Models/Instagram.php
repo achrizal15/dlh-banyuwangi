@@ -11,5 +11,8 @@ class Instagram extends Model
         'media_id',
         'media_url',
         'media_type',
+        'permalink',
+        'username',
+        'post_at'
     ];
 }

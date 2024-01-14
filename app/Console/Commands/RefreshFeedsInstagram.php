@@ -31,9 +31,10 @@ class RefreshFeedsInstagram extends Command
         $instagramRefreshFeedsAction = new \App\Action\InstagramRefreshFeedsAction;
         $result = $instagramRefreshFeedsAction->generate();
         if ($result == false) {
-            $this->info('Instagram API feed refreshed failure.');
+            $this->info('Instagram API feed refreshed failure.' . Carbon::now()->toDateString());
             return Command::FAILURE;
         }
+        \Illuminate\Support\Facades\Log::info('API_TOKEN: ' . $result);
         $this->info('Instagram API feed refreshed success.' . Carbon::now()->toDateString());
         return Command::SUCCESS;
     }
