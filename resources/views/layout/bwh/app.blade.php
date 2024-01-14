@@ -8,12 +8,12 @@
     <title>Banyuwangi Hijau</title>
     @livewireStyles
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    @vite('resources/js/app.js')
+    @vite('resources/js/bwh.js')
     @yield('styles')
 </head>
 
 <body>
-    <main class="min-h-screen flex flex-col justify-between">
+    <main class="min-h-screen flex flex-col justify-between pt-20">
         @include('layout.bwh.navbar')
         @yield('content')
         @include('layout.bwh.footer')

@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+
 // use App\Models\StaticPage;
 // use App\Models\Kategori;
 // use App\Models\Dokumen;
@@ -29,6 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ArtikelSeeder::class);
         $this->call(BannerSeeder::class);
         $this->call(MitraDLHSeeder::class);
+        $this->call(InstagramApiSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

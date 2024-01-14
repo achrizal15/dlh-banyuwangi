@@ -12,7 +12,7 @@
             route="#" :active="$active" />
     </div>
     <ul x-show="open" x-on:click.outside="open=false" x-transition
-        class="absolute top-16 bg-utama-100 p-5 gap-2 flex flex-col">
+        class="lg:absolute top-16 rounded-md bg-utama-100 p-5 gap-2 flex flex-col">
         {{ $slot }}
     </ul>
 </div>

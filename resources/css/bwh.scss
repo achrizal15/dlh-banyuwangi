@@ -5,3 +5,10 @@
 body {
      font-family: 'Poppins', sans-serif;
 }
+@media (max-width: 1023px) {
+     nav {
+          menu {
+               @apply absolute top-14 -left-5 -right-5 h-screen transform transition-all duration-500 px-5 bg-utama-100 lg:translate-x-0 translate-x-[40rem] sm:translate-x-[50rem] md:translate-x-[65rem];
+          }
+     }
+}

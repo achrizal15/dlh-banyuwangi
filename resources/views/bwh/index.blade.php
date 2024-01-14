@@ -1,10 +1,17 @@
 @extends('layout.bwh.app')
 @section('styles')
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 @endsection
 @section('content')
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus corporis voluptate voluptatem officiis. Dicta,
-    vitae repudiandae numquam labore neque beatae accusantium alias facere expedita blanditiis iste natus dolores officia
-    vel.
+    @include('bwh._section.banner')
+    <div class="grid grid-cols-2">
+        <div class="grid grid-cols-3">
+            <x-ig-feed />
+            <x-ig-feed />
+            <x-ig-feed />
+        </div>
+    </div>
 @endsection
 @section('js')
+    <script async src="//www.instagram.com/embed.js"></script>
 @endsection

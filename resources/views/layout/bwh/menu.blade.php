@@ -1,5 +1,8 @@
-<menu x-data="{ name: 123 }">
-    <ul class="flex gap-5 items-center">
+<menu :class="{
+    'translate-x-0':
+        !mobileToggle
+}">
+    <ul class="flex gap-5 flex-col items-start justify-start pt-10 lg:pt-0 lg:flex-row lg:items-center">
         <li>
             <x-nav-link route="{{ route('home') }}" :active="request()->routeIs('home')" />
         </li>
@@ -7,18 +10,18 @@
             <x-nav-link label="tentang kami" route="{{ route('tentang.kami') }}" :active="request()->routeIs('tentang-kami')" />
         </li>
         <li>
-            <x-dropdown label="informasi & regulasi" :active="request()->routeIs('ir.*')">
+            <x-nav-dropdown label="informasi & regulasi" :active="request()->routeIs('ir.*')">
                 @foreach ($categories as $item)
-                    <x-dropdown-item label="{{ $item->nama }}"
+                    <x-nav-dropdown-item label="{{ $item->nama }}"
                         route="{{ route('ir.index') }}?kategori={{ $item->id }}" :active="request()->routeIs('ir.*')" />
                 @endforeach
-            </x-dropdown>
+            </x-nav-dropdown>
         </li>
         <li>
-            <x-dropdown label="Lainnya" :active="false">
-                <x-dropdown-item label="Artikel" route="{{ route('artikel.index') }}?kategori={{ $item->id }}"
+            <x-nav-dropdown label="Lainnya" :active="false">
+                <x-nav-dropdown-item label="Artikel" route="{{ route('artikel.index') }}?kategori={{ $item->id }}"
                     :active="request()->routeIs('ir.*')" />
-            </x-dropdown>
+            </x-nav-dropdown>
         </li>
         <li>
             <a href="{{ route('bwh.index') }}">
