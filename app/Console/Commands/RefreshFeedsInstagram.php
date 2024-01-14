@@ -19,7 +19,7 @@ class RefreshFeedsInstagram extends Command
      *
      * @var string
      */
-    protected $description = 'Wil refresh instagram';
+    protected $description = 'Wil refresh instagram feeds';
 
     /**
      * Execute the console command.
