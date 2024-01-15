@@ -1,4 +1,4 @@
-<section class="px-5 xl:px-16 pt-16 ">
+<section class="px-5 xl:px-16 py-16 ">
     <x-heading prefix="Tentang" suffix="Kami" align="center" />
     <div class="flex items-center justify-center flex-col gap-5" x-data="{ read_all: false }">
         <div class="w-full xl:w-[700px] h-[200px] md:h-[400px]">
@@ -9,8 +9,8 @@
                 allowfullscreen></iframe>
         </div>
         <article class="w-full xl:w-[700px]">
-            <p class="text-justify indent-8" :class="{ 'line-clamp-5': !read_all }">
-                {!! $deskripsi_tentang !!}
+            <p class="text-justify indent-8 line-clamp-5 text-sm lg:text-base" :class="{ 'line-clamp-5': !read_all }">
+                {!! strip_tags($deskripsi_tentang) !!}
             </p>
         </article>
         <button x-on:click="read_all=!read_all" x-text="read_all ? 'Tutup' : 'Baca Lebih Lanjut'"

@@ -1,6 +1,6 @@
 @props([
     'prefix' => 'Feeds',
-    'suffix' => 'Instagram',
+    'suffix' => '',
     'align' => 'left',
 ])
 <div class="flex items-center {{ $align == 'left' ? 'justify-start' : 'justify-center' }}">

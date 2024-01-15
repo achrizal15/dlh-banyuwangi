@@ -19,8 +19,7 @@
         </li>
         <li>
             <x-nav-dropdown label="Lainnya" :active="false">
-                <x-nav-dropdown-item label="Artikel" route="{{ route('artikel.index') }}?kategori={{ $item->id }}"
-                    :active="request()->routeIs('ir.*')" />
+                <x-nav-dropdown-item label="Artikel" route="{{ route('artikel.index') }}" :active="request()->routeIs('ir.*')" />
             </x-nav-dropdown>
         </li>
         <li>

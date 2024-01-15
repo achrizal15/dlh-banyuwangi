@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Action\DefaultDataBanyuwangiHijau;
+use App\Models\CeritaSukses;
 use Illuminate\Http\Request;
+use App\Action\DefaultDataBanyuwangiHijau;
 
 class BanyuwangiHijauController extends Controller
 {
@@ -13,8 +14,14 @@ class BanyuwangiHijauController extends Controller
             ->limit(6)
             ->get();
         $static_attributes = $defaultDataBanyuwangiHijau->index();
+        $news = CeritaSukses::latest()->get();
         $feeds = \App\Models\Instagram::latest()->limit(6)->get();
         $categories = \App\Models\Kategori::select(['nama', 'id'])->get();
-        return view("bwh.index", array_merge(['feeds' => $feeds, 'categories' => $categories], $static_attributes));
+
+        return view("bwh.index", array_merge([
+            'feeds' => $feeds,
+            'news' => $news,
+            'categories' => $categories
+        ], $static_attributes));
     }
 }

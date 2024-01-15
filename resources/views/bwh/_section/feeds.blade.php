@@ -1,4 +1,4 @@
-<section class="pt-16 px-5 xl:px-16">
+<section class="py-16 px-5 xl:px-16 bg-utama-100">
     <x-heading prefix="Feeds" suffix="Instagram" />
     <div class="grid xl:grid-cols-2 gap-5">
         <article class="flex flex-col items-center gap-5">
@@ -62,7 +62,7 @@
                 @endforeach
             </div>
             <a class="text-center bg-utama-300 text-white hover:text-utama-100 hover:bg-utama-400 transition px-5 rounded-full py-3 text-sm lg:text-base font-medium"
-                href="https://www.instagram.com/{{ $feeds->first()->username }}/" target="_blank"
+                href="https://www.instagram.com/{{ $feeds->first()?->username }}/" target="_blank"
                 rel="noopener noreferrer">Kunjungi
                 Langsung</a>
         </article>

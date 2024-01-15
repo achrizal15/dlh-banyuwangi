@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+:root {
+     --swiper-theme-color: #25723e;
+}
 body {
      font-family: 'Poppins', sans-serif;
+}
+#social-links li {
+     display: inline-block;
+     padding: 4px;
+     text-align: center;
+     list-style: none;
+}
+.swiper-slide::after {
+     background: linear-gradient(
+          180deg,
+          rgba(37, 114, 62, 0.7) -29.32%,
+          #25723e 100%
+     );
+     box-shadow: -4px -56px 50px 0px #25723e;
 }
 @media (max-width: 1023px) {
      nav {

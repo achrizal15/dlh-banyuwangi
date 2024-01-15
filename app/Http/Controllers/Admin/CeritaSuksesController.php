@@ -16,7 +16,7 @@ class CeritaSuksescontroller extends Controller
     public function index()
     {
         $cerita_suksess = CeritaSukses::all();
-        return view('admin.ceritaSukses.index',compact('cerita_suksess'));
+        return view('admin.ceritaSukses.index', compact('cerita_suksess'));
     }
 
     /**
@@ -26,11 +26,11 @@ class CeritaSuksescontroller extends Controller
      */
     public function create()
     {
-        $admin=request()->segment(1);
-        $page=request()->segment(2);
-        $action=request()->segment(3);
+        $admin = request()->segment(1);
+        $page = request()->segment(2);
+        $action = request()->segment(3);
 
-        return view('admin.ceritaSukses.form', compact('admin','page','action'));
+        return view('admin.ceritaSukses.form', compact('admin', 'page', 'action'));
     }
 
     /**
@@ -47,8 +47,8 @@ class CeritaSuksescontroller extends Controller
             "link" => "required",
             "gambar" => "required",
         ]);
-        $validate["created_by"]=auth()->user()->name;
-        $validate["gambar"]=$request->file('gambar')->store("cerita_sukses");
+        $validate["created_by"] = auth()->user()->name;
+        $validate["gambar"] = asset('storage/' . $request->file('gambar')->store("cerita_sukses"));
         CeritaSukses::create($validate);
         return redirect()->route("cerita-suksess.index")->with("message", "Data has been added.");
     }
@@ -72,11 +72,11 @@ class CeritaSuksescontroller extends Controller
      */
     public function edit(CeritaSukses $cerita_suksess)
     {
-        $admin=request()->segment(1);
-        $page=request()->segment(2);
-        $action=request()->segment(3);
+        $admin = request()->segment(1);
+        $page = request()->segment(2);
+        $action = request()->segment(3);
 
-        return view('admin.ceritaSukses.form', compact('cerita_suksess','admin','page','action'));
+        return view('admin.ceritaSukses.form', compact('cerita_suksess', 'admin', 'page', 'action'));
     }
 
     /**
@@ -93,12 +93,12 @@ class CeritaSuksescontroller extends Controller
             "deskripsi" => "required",
             "link" => "required",
         ];
-        if($request->judul!=$cerita_suksess->judul){
-            $rules['judul'].="|unique:cerita_sukses";
+        if ($request->judul != $cerita_suksess->judul) {
+            $rules['judul'] .= "|unique:cerita_sukses";
         }
-        $validate=$request->validate($rules);
-        if($request->hasFile("gambar")){
-            $validate["gambar"]= $request->file('gambar')->store("cerita_sukses");
+        $validate = $request->validate($rules);
+        if ($request->hasFile("gambar")) {
+            $validate["gambar"] = asset('storage/' . $request->file('gambar')->store("cerita_sukses"));
         }
         $cerita_suksess->update($validate);
         return redirect()->route("cerita-suksess.index")->with("message", "Data has been updated.");

@@ -8,6 +8,7 @@
     <title>Banyuwangi Hijau</title>
     @livewireStyles
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://kit.fontawesome.com/bb21b3c852.js" crossorigin="anonymous"></script>
     @vite('resources/js/bwh.js')
     @yield('styles')
 </head>
