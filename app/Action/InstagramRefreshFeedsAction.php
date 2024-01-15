@@ -23,9 +23,6 @@ class InstagramRefreshFeedsAction
                            'fields' => 'caption,media_url,id,media_type,permalink,username,timestamp',
                            'access_token' => $this->latestToken()
                   ]);
-                  if (!$response->successful()) {
-                           return [];
-                  }
                   $body = collect(json_decode($response->body())->data);
                   return $body->map(function ($data) {
                            return [
@@ -46,10 +43,10 @@ class InstagramRefreshFeedsAction
                            $data = $this->fetchData();
                            if (count($data) > 0) {
                                     Instagram::where('media_id', '!=', 'refresh')->delete();
-                                    Instagram::insert($data);
                            }
+                           $instagram = Instagram::insert($data);
                            DB::commit();
-                           return true;
+                           return $instagram;
                   } catch (\Throwable $th) {
                            return throw new \Exception($th->getMessage(), 1);
 
