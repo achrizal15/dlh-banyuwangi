@@ -1,4 +1,5 @@
 @extends('layout.bwh.app')
+
 @section('styles')
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
 @endsection
